@@ -1,0 +1,28 @@
+# Core numerical / data
+numpy>=1.23,<2.3
+pandas>=1.5
+pyarrow>=12.0          # parquet I/O for processed splits
+
+# Deep learning
+torch>=2.2             # CPU or CUDA build; sparse.mm + autocast used
+                       # NOTE: with torch 2.2.x on Python 3.12 pin numpy<2 to avoid
+                       #       the "compiled against NumPy 1.x" runtime error.
+
+# XLM-RoBERTa + emotion models (Hugging Face)
+transformers>=4.40
+sentencepiece>=0.1.99  # REQUIRED by the XLM-R tokenizer
+huggingface-hub>=0.23
+
+# Dataset loading
+datasets>=2.19         # only needed for DATASET_SOURCE="amazon_c4"
+                       # Google Local is streamed via urllib+gzip (stdlib)
+
+# Language identification (Phase 8) — pure Python, no model download
+langdetect>=1.0.9
+# py3langid>=0.2       # optional alternative backend (set LANG_DETECT_BACKEND)
+
+# Plotting
+matplotlib>=3.6
+
+# Progress bars (optional)
+tqdm>=4.65
